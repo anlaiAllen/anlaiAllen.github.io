@@ -287,7 +287,7 @@
               
                 
                 <a class="post-title-link" href="/2017/03/21/爬虫/" itemprop="url">
-                  爬虫
+                  爬虫概述
                 </a>
               
             
@@ -333,7 +333,7 @@
 
           
           
-             <span id="/2017/03/21/爬虫/" class="leancloud_visitors" data-flag-title="爬虫">
+             <span id="/2017/03/21/爬虫/" class="leancloud_visitors" data-flag-title="爬虫概述">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -362,8 +362,8 @@
       
         
           
-            <h4 id="Requests库的使用"><a href="#Requests库的使用" class="headerlink" title="Requests库的使用"></a>Requests库的使用</h4><p>　　首先，request是第三方库，这里用非常方便的<code>pip install requests</code> 来进行安装。</p>
-<h5 id="发送请求"><a href="#发送请求" class="headerlink" title="发送请求"></a>发送请求</h5><p>　　在写程序之前，我们要先引用requests库，代码如<code>import requests</code> ，这样就可以使用requests库了。requests库有如下方法：get , post , put , delete , head , options 。在实际编写爬虫代码中，最长用到的就是使用get方法来获取某个页面，这里举例获取百度首页，代码如下：<br><code>response = requests.get(&#39;https://www.baidu.com&#39;)</code><br>返回的response即为百度首页的源代码。</p>
+            <h4 id="Requests库的使用"><a href="#Requests库的使用" class="headerlink" title="Requests库的使用"></a>Requests库的使用</h4><p>　　首先，request是第三方库，这里用非常方便的<figure class="highlight plain"><figcaption><span>install requests``` 来进行安装。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;!--more--&gt;</div><div class="line">#####  发送请求</div><div class="line">　　在写程序之前，我们要先引用requests库，代码如``import requests`` ，这样就可以使用requests库了。requests库有如下方法：get , post , put , delete , head , options 。在实际编写爬虫代码中，最长用到的就是使用get方法来获取某个页面，这里举例获取百度首页，代码如下：</div><div class="line">``response = requests.get(&apos;https://www.baidu.com&apos;)``</div><div class="line">返回的response即为百度首页的源代码。</div><div class="line">##### 传递参数</div><div class="line">　　requests实际代替了我们用浏览器来发送请求，但是对于服务器来说它是可以鉴别发送请求的主体是什么的，我们用Chrome来进行抓包，F12打开Network，刷新请求，我们在Request Headers 中可以看到 如下：</div><div class="line">&gt; User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36</div><div class="line">此即为服务器看到请求的主体，对于一些网站出于安全考虑来讲会限制爬虫，一些较为低级的限制方式就是识别头部，如果是浏览器即可访问，请他类似于Request 或Urllib 等则无法访问。那现在让我给Requests传递参数吧，我们构建headers 这个参数，这是一个字典，里面可以放入如 User-Agent，Cookies等参数，例</div></pre></td></tr></table></figure></p>
+<p>headers = {<br>‘User-Agent’：‘Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36’<br>}<br>response = requests.get(‘<a href="https://www.baidu.com" target="_blank" rel="external">https://www.baidu.com</a>‘ , headers = headers)`<br>```<br>这样，我们在用Requests来访问百度，服务器看到的请求就是有Mozilla/5.0 这个浏览器来发送的，而不是爬虫。</p>
 
           
         
