@@ -985,7 +985,7 @@ pre .javascript .function {
 }
 .headband {
   height: 3px;
-  background: url("http://oncxmk8r7.bkt.clouddn.com/one.jpg");
+  background: #fff;
 }
 .site-meta {
   margin: 0;
@@ -1685,7 +1685,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #7affbb;
+  background: #bff1f9;
 }
 .links-of-blogroll {
   font-size: 13px;
