@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="Requests库的使用　　首先，request是第三方库，这里用非常方便的pip install requests 来进行安装。">
+<meta name="description" content="Requests库的使用　　首先，requests是一个第三方库，大家可以看requests的官方文档，requests的使用非常友好，我们来看一下requests的开发哲学：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="爬虫概述">
 <meta property="og:url" content="http://yoursite.com/2017/03/21/爬虫/index.html">
 <meta property="og:site_name" content="Anlai always online">
-<meta property="og:description" content="Requests库的使用　　首先，request是第三方库，这里用非常方便的pip install requests 来进行安装。">
-<meta property="og:updated_time" content="2017-03-22T14:53:34.743Z">
+<meta property="og:description" content="Requests库的使用　　首先，requests是一个第三方库，大家可以看requests的官方文档，requests的使用非常友好，我们来看一下requests的开发哲学：">
+<meta property="og:updated_time" content="2017-03-31T23:22:14.731Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬虫概述">
-<meta name="twitter:description" content="Requests库的使用　　首先，request是第三方库，这里用非常方便的pip install requests 来进行安装。">
+<meta name="twitter:description" content="Requests库的使用　　首先，requests是一个第三方库，大家可以看requests的官方文档，requests的使用非常友好，我们来看一下requests的开发哲学：">
 
 
 
@@ -356,7 +356,11 @@
       
 
       
-        <h4 id="Requests库的使用"><a href="#Requests库的使用" class="headerlink" title="Requests库的使用"></a>Requests库的使用</h4><p>　　首先，request是第三方库，这里用非常方便的<code>pip install requests</code> 来进行安装。<br><a id="more"></a></p>
+        <h4 id="Requests库的使用"><a href="#Requests库的使用" class="headerlink" title="Requests库的使用"></a>Requests库的使用</h4><p>　　首先，requests是一个第三方库，大家可以看<a href="http://www.python-requests.org/en/master/" target="_blank" rel="external">requests</a>的官方文档，requests的使用非常友好，我们来看一下requests的开发哲学：<br><a id="more"></a></p>
+<blockquote>
+<p>Beautiful is better than ugly.(美丽优于丑陋)<br>Explicit is better than implicit.(直白优于含蓄)<br>Simple is better than complex.(简单优于复杂)<br>Complex is better than complicated.(复杂优于繁琐)<br>Readability counts.(可读性很重要)</p>
+</blockquote>
+<p>　　所以大家只要把官方文档搞清楚，就可以熟练运用这个可以让HTTP为人类使用的库了。<br>　　好了，让我们开始一起探索吧。首先这里用非常方便的<code>pip install requests</code> 来进行安装。</p>
 <h5 id="发送请求"><a href="#发送请求" class="headerlink" title="发送请求"></a>发送请求</h5><p>　　在写程序之前，我们要先引用requests库，代码如<code>import requests</code> ，这样就可以使用requests库了。requests库有如下方法：get , post , put , delete , head , options 。在实际编写爬虫代码中，最常用到的就是使用get方法来获取某个页面，这里举例获取百度首页，代码如下：<br><code>response = requests.get(&#39;https://www.baidu.com&#39;)</code><br>返回的response即为百度首页的源代码。</p>
 <h5 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h5><p>　　requests实际代替了我们用浏览器来发送请求，但是对于服务器来说它是可以鉴别发送请求的主体是什么的，我们用Chrome来进行抓包，F12打开Network，刷新请求，我们在Request Headers 中可以看到 如下：</p>
 <blockquote>
