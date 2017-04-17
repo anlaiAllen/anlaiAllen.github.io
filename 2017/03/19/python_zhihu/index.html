@@ -94,7 +94,7 @@
 <meta property="og:image" content="http://oncxmk8r7.bkt.clouddn.com/one.png">
 <meta property="og:image" content="http://oncxmk8r7.bkt.clouddn.com/two.png">
 <meta property="og:image" content="http://oncxmk8r7.bkt.clouddn.com/three.png">
-<meta property="og:updated_time" content="2017-04-17T15:42:06.570Z">
+<meta property="og:updated_time" content="2017-04-17T15:44:54.402Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python模拟登陆知乎">
 <meta name="twitter:description" content="前期准备　　首先，利用Python模拟登陆实际上就是运用程序模仿浏览器的行为，向服务器提交请求并附上参数（账号密码），（~~(&amp;gt;_&amp;lt;)~~好像是废话哦），Python的第三方库 Requests 为我们很好的解决了这个问题，就像她的简介那样：HTTP for Humans，我们可以非常灵活的运用她进行与服务器的对话。另外，由于HTTP是无状态协议，它无法对之前发生过的请求和相应的状态进">
@@ -362,6 +362,7 @@
 
       
         <h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p>　　首先，利用Python模拟登陆实际上就是运用程序模仿浏览器的行为，向服务器提交请求并附上参数（账号密码），（<del>~~(&gt;_&lt;)</del>~~好像是废话哦），Python的第三方库 <a href="http://cn.python-requests.org/zh_CN/latest/" target="_blank" rel="external">Requests</a> 为我们很好的解决了这个问题，就像她的简介那样：HTTP for Humans，我们可以非常灵活的运用她进行与服务器的对话。另外，由于HTTP是无状态协议，它无法对之前发生过的请求和相应的状态进行管理，也就是说，无法根据之前的状态进行本次的请求处理。所以，就有了Cookie技术，服务器通过cookie来确定客户端的状态。如下为客户端与服务器之间的对话：</p>
+<a id="more"></a>
 <div align="center"><br><img src="http://oncxmk8r7.bkt.clouddn.com/cookie.png" alt="cookie"><br></div>
 
 <p>　　我们成功的模拟登陆后，要想持续保持登陆状态，就需要保存Cookie，在之后进行的请求中加入这个Cookie参数，但是Requests库为我们提供了更简洁的方法，那就是引入会话对象，她能够跨请求保持某些参数，她会在同一个 Session 实例发出的所有请求之间保持 cookie，所以我们在开始初始化一个Session实例<code>session = requests.Session()</code>来进行模拟提交身份信息登录网站，登录成功后即保存了本次Cookie，以方便进行后续操作。</p>
